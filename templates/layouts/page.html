@@ -119,8 +119,9 @@
         <!--<li><a href="/2014/conference">Conference</a></li>
         <li><a href="/2014/workshops">Workshops</a></li>
         <li><a href="/2014/angularjs-miniconf">Miniconf</a></li> -->
-        <li><a href="/2016/venue">Venue</a></li>
         <li><a href="/2016/sponsors">Sponsors</a></li>
+        <li><a href="/2016/#tickets">Tickets</a></li>
+        <li><a href="/2016/venue">Venue</a></li>
         <!--</li> Isn't this one an error? -->
         <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extras <b class="caret"></b></a>
@@ -133,8 +134,8 @@
             <li><a href="/2016/about">About HasGeek</a></li>
           </ul>
         </li>
-        <li><a target="_blank" href="https://jobs.hasgeek.com/search?q=web">Jobs</a></li>
-        <li><a href="/2014/#tickets">Tickets</a></li>-->
+        <li><a target="_blank" href="https://jobs.hasgeek.com/search?q=web">Jobs</a></li>-->
+        
       </ul>
     </div><!-- /.navbar-collapse -->   
    </div>
@@ -176,7 +177,7 @@
 {%- if not config['DEBUG'] %}
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 {%- endif %}
-<script>window.jQuery || document.write('<script src="{{ theme_static('js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="{{ theme_static('js/vendor/jquery-2.2.0.min.js') }}"><\/script>')</script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.3/leaflet.js"></script>
 {%- if _theme %}
   {% assets "js_" + _theme -%}
@@ -245,3 +246,68 @@ if (location.hostname == 'droidcon.in') {
 
 </body>
 </html>
+{% block footer_script %}
+<style type="text/css">    
+  #boxoffice-widget .boxoffice-button-action {    
+    background-color: #E05F26;    
+    border-color:  #B94C1D;   
+    color: #fff;    
+  }   
+  #boxoffice-widget .boxoffice-button-info {    
+    background-color: #5BC0DE;    
+    border-color: #2A9CBE;    
+    color: #fff;    
+  }   
+  #boxoffice-widget .payment-stages-bg {    
+    background-color: #60583E;    
+  }   
+  #boxoffice-widget .progress-indicator>li {    
+    color: #bbb;    
+  }   
+  #boxoffice-widget .category-heading {   
+    background-color: #F2DE9C;    
+    border-bottom: 3px solid #bcad7a;   
+    color: rgba(0,0,0,0.6);  
+    line-height: 1.1;  
+  }   
+  #boxoffice-widget .category-heading:after {   
+    border-color: #F2DE9C transparent #F2DE9C #F2DE9C;    
+  }
+</style>    
+    
+<script>    
+  $(function(){   
+    //Boxoffice widget    
+    var boxofficeUrl = "http://boxoffice.hari.dev:6500";   
+    var username, userphone, useremail;   
+    {% if g.user %}   
+      {% if g.user.fullname %}    
+        username = "{{ g.user.fullname }}";   
+      {% endif %}   
+      {% if g.user.phone %}   
+        userphone = "{{ g.user.phone }}";   
+      {% endif %}   
+      useremail = "{{ g.user.email }}";   
+    {% endif %}   
+    $.get({   
+      url: boxofficeUrl+"/api/1/boxoffice.js",    
+      crossDomain: true   
+    }).done(function(data) {    
+      var boxofficeScript = document.createElement('script');   
+      boxofficeScript.innerHTML = data.script;    
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
+      window.Boxoffice.init({   
+        org: 'hasgeek',   
+        itemCollection: 'Add item collection id here',   
+        user_name: username,    
+        user_phone: userphone,    
+        user_email: useremail,    
+        paymentDesc: 'Fifth Elephant 2016'    
+      });   
+    }).fail(function(response) {    
+      $('#boxoffice-widget p').html('Unable to connect. Please try again.');    
+    });   
+  });   
+</script>
+{% endblock %}
+
