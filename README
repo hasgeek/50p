@@ -1,9 +1,8 @@
-Meta Refresh 2013 Website - Eventframe version
+50p 2016 Website - Eventframe version
 
 Installation instructions
 * Clone into themes folder
-    git clone git://github.com/hasgeek/metarefresh.git metarefresh2013
-    cd metarefresh2013
-    git checkout 2013-eventframe
+    git clone git://github.com/hasgeek/50.git 50p2016
+    cd 50p2016
 
 * Restart Eventframe
