@@ -1,8 +1,8 @@
 50p 2016 Website - Eventframe version
 
 Installation instructions
-* Clone into themes folder
-    git clone git://github.com/hasgeek/50.git 50p2016
-    cd 50p2016
+* Clone into themes folder (fiftyp2016)
+    git clone https://github.com/hasgeek/50p.git fiftyp2016
+    cd fiftyp2016
 
 * Restart Eventframe
