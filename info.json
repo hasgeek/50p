@@ -1,9 +1,9 @@
 {
     "application": "eventframe",
-    "identifier": "a50p2016",
-    "name": "a50p 2016",
+    "identifier": "fiftyp2016",
+    "name": "50p 2016",
     "author": "HasGeek",
-    "description": "a50p 2016 website template, adapted from Meta Refresh 2014",
+    "description": "50p 2016 website template",
     "license": "All rights reserved",
     "doctype": "html5",
     "options": {
