@@ -60,7 +60,7 @@
 @media (max-width: 767px) { #hg-bar { padding: 0 20px; } }
 
 .logo-text{
-  background-image: url('https://images.hasgeek.com/embed/file/74ed70af5c2a444aa652431d1a74731a');
+  background-image: url('https://images.hasgeek.com/embed/file/afaadd610e9a41fcad15c1d7a2b13635');
   background-size: 70%;
   background-repeat: no-repeat;
   background-position: center top;
@@ -147,7 +147,7 @@
 }
 
 .banner-internal .logo {
-    background: url('https://images.hasgeek.com/embed/file/74ed70af5c2a444aa652431d1a74731a') no-repeat scroll center center;
+    background: url('https://imgee.s3.amazonaws.com/imgee/afaadd610e9a41fcad15c1d7a2b13635_w200_h130.png') no-repeat scroll center center;
     background-size: contain;
     height: 0;
     width:       5.5rem;
@@ -207,12 +207,23 @@
     position: relative;
     padding: 0;
 }
+.js .venue-home h2 {
+    position: absolute;
+    z-index: 100;
+    color: black;
+    width: auto;
+    margin: 0;
+    padding:0;
+    font-size: 3rem;
+    right: 1.2rem;
+    top:   0.55rem;
+}
 .js .leaflet-map {
     height: 555px;
     color: black;
 }
 .js .leaflet-map a { border-bottom: none; }
-.js .venue-home .city-level    { width: 90%; margin:auto; }
+.js .venue-home .city-level    { width: 100%; }
 
 @media (max-width: 767px) {
     .js .venue-home { padding: 0; }
@@ -223,7 +234,6 @@
         text-shadow: rgba(0,0,0,0.5) 0 0 1px;
     }
     .js .venue-home .city-level    { width: 100%; }
-    .js .venue-home .country-level { display: none; }
 }
 @media (min-height: 300px) { .js .leaflet-map { height: 250px; } }
 @media (min-height: 450px) { .js .leaflet-map { height: 425px; } }
@@ -1181,4 +1191,3 @@ ul.list-plain{
 .helptext {
   height: 30px;
 }
-
