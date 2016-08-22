@@ -17,7 +17,7 @@
     <div class="heading-text">
       <h2 class="logo-text text1">A conference<br> on India's payments ecosystem</h2>
       <h3 class="text2">MLR convention center, Bangalore</h3>
-      <h3 class="venue-text">7&#8212;8 December 2016</h3>
+      <h3 class="venue-text">7&#8211;8 December 2016</h3>
       <button href="#tickets" class="button smooth-scroll buy-tickets-btn" target="_blank">Buy tickets</button>
     </div>
   {% block banner %}{% endblock %}
@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand logo-text brown semibold" href="/2016/">50p</a>
+          <a class="navbar-brand brown semibold" href="/2016/">50p</a>
         </div>
 
 
@@ -89,7 +89,7 @@
 <script>    
   $(function(){   
     //Boxoffice widget    
-    var boxofficeUrl = "https://boxoffice.hasgeek.com";   
+    var boxofficeUrl = "http://boxoffice.vidya.dev:6500";   
     var username, userphone, useremail;   
     {% if g.user %}   
       {% if g.user.fullname %}    
@@ -109,7 +109,7 @@
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
       window.Boxoffice.init({   
         org: 'hasgeek',   
-        itemCollection: '06c8b92e-6812-11e6-9897-b37c18073f39',   
+        itemCollection: 'eb1b3bb3-6531-11e6-b4bb-2bd94b45c89c',   
         user_name: username,    
         user_phone: userphone,    
         user_email: useremail,    
