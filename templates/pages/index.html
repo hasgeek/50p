@@ -89,7 +89,7 @@
 <script>    
   $(function(){   
     //Boxoffice widget    
-    var boxofficeUrl = "http://boxoffice.vidya.dev:6500";   
+    var boxofficeUrl = "https://boxoffice.hasgeek.com"; 
     var username, userphone, useremail;   
     {% if g.user %}   
       {% if g.user.fullname %}    
@@ -101,7 +101,7 @@
       useremail = "{{ g.user.email }}";   
     {% endif %}   
     $.get({   
-      url: boxofficeUrl+"/api/1/boxoffice.js",    
+      url: boxofficeUrl+"/api/1/boxoffice.js",
       crossDomain: true   
     }).done(function(data) {    
       var boxofficeScript = document.createElement('script');   
@@ -109,7 +109,7 @@
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
       window.Boxoffice.init({   
         org: 'hasgeek',   
-        itemCollection: 'eb1b3bb3-6531-11e6-b4bb-2bd94b45c89c',   
+        itemCollection: '06c8b92e-6812-11e6-9897-b37c18073f39',
         user_name: username,    
         user_phone: userphone,    
         user_email: useremail,    
