@@ -14,12 +14,10 @@ em,
 */
 
 
-body,
-.title-type     { font-family: "Raleway", brandon-grotesque, "Brandon Grotesque", "Gill Sans", "Gill Sans MT", sans-serif; }
+body    { font-family: 'Raleway', sans-serif; }
 
-i,
-em,
-.prose-type     { font-family: "Raleway", adobe-caslon-pro, "Adobe Caslon Pro", serif; }
+.logo-text { font-family: 'Oswald', sans-serif; }
+
 
 
 /*  Scale  */
@@ -64,170 +62,20 @@ html                    { font-size: 16px;     line-height: 1.5; }
     html                { font-size: 24px; }
 }
 
-
-
-/*  Helpers  */
-
-abbr {
-    font-size: 0.9em;
-    font-variant: small-caps;
-    border-bottom: none;
-}
-
-.thin           { font-weight: 300;    }
-.calm           { font-weight: 400; }
-.semibold       { font-weight: 500;    }
-.bold           { font-weight: bold;   }
-.extrabold      { font-weight: 900;    }
-.italic         { font-style: italic;  }
-.no-italic      { font-style: normal;  }
-
-.all-caps       { text-transform: uppercase;    }
-.all-capitalize { text-transform: capitalize !important;   }
-.all-lower      { text-transform: lowercase;    }
-.small-caps     { font-variant: small-caps;     }
-.strike         { text-decoration: line-through;}
-.no-underline   { text-decoration: none;        }
-
-.unordered      { list-style-type: none; }
-
-.amp  {
-    font-family: 'Hoefler Text', Baskerville, Palatino, 'Book Antiqua', Constantia, 'URW Palladio L';
-    font-style: italic;
-    font-size: 1.2em;
-    line-height: 0.5em;
-}
-.quo  { margin-left: -0.24em; }
-.dquo { margin-left: -0.44em; }
-.tquo { margin-left: -0.68em; }
-
-
-.list-plain         { list-style-type: none; margin-left: 0; }
-.dl-plain dd        { margin-left: 0; line-height: inherit; }
-.dl-plain dd + dt   { margin-top: 2rem; }
-@media (max-width: 767px) {
-    .inline-on-mobile li { display: inline; margin-right: 0.5rem; }
-    .inline-on-mobile dd { display: inline; margin-right: 0.5rem; }
-}
-.prose li { line-height: inherit; }
-.why-attend li { line-height: inherit !important; }
-.runup-events li { padding-bottom: 1em;}
-.runup-events li:last-child { padding-bottom: 0; }
-
-
-
-.link{
-    /*text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);*/
-    color: #999;
-    /*text-shadow: 2px 0px #BF4D28, -1px 0px rgba(224, 228, 204, 0.6);*/
-}
-.line0{
-    font-size: 3.1em;
-    color: #0CA5B0;
-    text-shadow: 1px 1px 1px rgba(224, 228, 204, 0.5);
-}
-.line1{
-    font-size: 4.15em;
-    line-height: 1.2em;
-}
-.line2{
-    font-size: 5.95em;
-    line-height: 1em;
-}
-.line3{
-    font-size: 7.89em;
-    line-height: 1.1em;
-}
-.line4{
-    font-size: 2.04em;
-}
-@media screen and (min-width: 768px) and (max-width: 65em){
-    .line0{
-        font-size: 2.19em;
-    }
-    .line1{
-        font-size: 3em;
-    }
-    .line2{
-        font-size: 4.24em;
-    }
-    .line3{
-        font-size: 5.67em;    
-    }  
-}
-@media screen and (max-width: 580px){
-    .line0{
-        font-size: 2.19em;
-    }
-    .line1{
-        font-size: 2.92em;
-    }
-    .line2 .part1{
-        font-size: 2.2em;
-        line-height: 0.9em;
-    }
-    .line2 .part2{
-        font-size: 1em;
-    }
-    .line3 .part1{
-        font-size: 1.15em;    
-    }
-    .line3 .part2{
-        font-size: 1em;    
-        line-height: 0.75em;
-    }
-}
-@media screen and (max-width: 456px){
-    .line0{
-        font-size: 2.9em;
-    }
-    .line1{
-        font-size: 1.95em;
-        line-height: 3.5em;
-    }
-    .line2{
-        line-height: 0.5em;
-    }
-    .line2 .part1{
-        font-size: 1.55em;
-        line-height: 0.6em;
-    }
-    .line2 .part2{
-        font-size: 0.6em;
-        line-height: 1.5em;
-    }
-    .line3{
-        line-height: 0.5em;
-    }
-    .line3 .part1{
-        font-size: 0.78em;    
-    }
-    .line3 .part2{
-        font-size: 0.8em;    
-        line-height: 1.1em;
-    }
-}
-
-.navbar .nav>li>a, .navbar-brand{
+.navbar .nav>li>a, .navbar-brand {
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 0.05em;
   color: #0CA5B0;
 }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
-    font-family: inherit;
+
+.navbar-brand{
+    font-family: 'Oswald', sans-serif;
 }
 
-*::selection {
-    background-color: #C7C575;
-}
-*::-moz-selection {
-    background-color: #C7C575;
-}
-*::-webkit-selection {
-    background-color: #C7C575;
-}
-*::-o-selection {
-    background-color: #C7C575;
+font-family: 'Raleway', sans-serif;
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: inherit;
 }
