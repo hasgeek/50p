@@ -17,6 +17,7 @@
         ],
         "assets_js": [
             "js/vendor/bootstrap.min.js",
+            "js/main.js",
             "js/maps.js"
         ]
     }
