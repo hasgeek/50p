@@ -133,6 +133,12 @@ header {
   .buy-tickets-btn {
     position: absolute;
     bottom: -5%;
+    left: -80%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .buy-tickets-btn {
     left: -100%;
   }
 }
