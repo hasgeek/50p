@@ -8,13 +8,21 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}50p: Conference about India's digital payments ecosystem, in Bangalore, India{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{% endif %}">
 <meta name="author" content="HasGeek and friends">
+<meta name="keywords" content="Conference, Workshops, UPI, Online Payment, Digital Payment, Bitcoin, Wallet, Aadhar, AEPS, PSP, POS, Banks, e-commerce, digital money, API, Bangalore, Bengaluru, India"> 
 
-<meta property="og:title" content="50p 2016{% if page.title %} — {{ page.title }}{% endif %}"/>
-<meta property="og:image" content="{{ request.url_root[:-1] }}{{ theme_static('img/logo.png') }}"/>
+<meta property="og:title" content="{% if page.title %}{{ page.title }} — 50p 2016{% else %}50p - On India’s emerging digital payments’ ecosystem{% endif %}"/>
+<meta property="og:image" content="https://images.hasgeek.com/embed/file/391ba76b0609494ba20af6e2eccaf017"/>
 <meta property="og:url" content="{{ request.url }}"/>
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}50p: Conference about India's digital payments ecosystem., in Bangalore, India{% endif %}"/>
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Payments are now an open field. Meet the people making it happen - developers and business, merchants and consumers, banks and regulators.{% endif %}"/>
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@50pConf" /> 
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }} — 50p 2016{% else %}50p - On India’s emerging digital payments’ ecosystem{% endif %}" /> 
+<meta name="twitter:image" content="https://images.hasgeek.com/embed/file/391ba76b0609494ba20af6e2eccaf017">
+
+<meta property="fb:app_id" content="1577989152504929" />
 
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -38,10 +46,27 @@
 </head>
 
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1577989152504929',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <div class="fill-silver">
   {% block networkbar %}
-    {{ networkbar(siteid='events', login=false) }}
+    {{ networkbar(siteid='events', login=true) }}
   {% endblock %}
 </div>
 
