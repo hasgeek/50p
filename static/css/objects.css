@@ -24,7 +24,7 @@ header {
   font-size: 25px;
   line-height: 1.3;
   margin: 20px 0 0;
-  color: #414356;
+  color: #fff;
   font-weight: 300;
   width: 70%;
 }
@@ -50,7 +50,7 @@ header {
   }
 
   .heading-text {
-    bottom: 10%;
+    bottom: 5%;
   }
 
   .text1 {
@@ -60,11 +60,12 @@ header {
 
 @media (min-width: 600px) {
   header {
-    height: 700px;
+    height: 750px;
+    background-position: 0 70%;
   }
 
   .heading-text {
-    bottom: 15%;
+    bottom: 8%;
   }
 
   .text1 {
@@ -77,16 +78,8 @@ header {
 }
 
 @media (min-width: 768px) {
-  header {
-    height: 1000px;
-  }
-
-  .heading-text {
-    bottom: 20%;
-  }
-
   .text1 {
-    width: 100%;
+    width: 90%;
   }
 
   .buy-tickets-btn {
@@ -96,7 +89,7 @@ header {
 
 @media (min-width: 1024px) {
   header {
-    height: 1200px;
+    height: 1000px;
   }
 }
 
@@ -109,6 +102,7 @@ header {
   .heading-text {
     position: absolute;
     top: 39%;
+    bottom: 0;
     left: 44%;
   }
 
@@ -116,6 +110,7 @@ header {
     font-size: 45px;
     line-height: 1.3;
     margin: 20px 0px;
+    color: #414356;
   }
 
   .text2 {
@@ -127,12 +122,12 @@ header {
   .venue-text {
     font-size: 25px;
     color: #1B1E3D;
-    margin: 80px 0;
+    margin: 80px 0 10px;
   }
 
   .buy-tickets-btn {
-    position: absolute;
-    bottom: -5%;
+    position: relative;
+    bottom: 55px;
     left: -80%;
   }
 }
