@@ -109,7 +109,7 @@ header {
   .heading-text {
     position: absolute;
     top: 39%;
-    left: 35%;
+    left: 44%;
   }
 
   .text1 {
@@ -140,6 +140,9 @@ header {
 @media (min-width: 1400px) {
   .buy-tickets-btn {
     left: -100%;
+  }
+  .heading-text {
+    left: 38%;
   }
 }
 
