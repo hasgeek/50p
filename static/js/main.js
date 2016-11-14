@@ -36,4 +36,14 @@ $(document).ready(function() {
     var sectionPos = $(""+section).offset().top - $('.site-navbar').height();
     $('html,body').animate({scrollTop:sectionPos}, '900');
   });
+
+  // Function that tracks a click button in Google Analytics.
+  $('.button').click(function(event) {
+      var button = $(this).html();
+      var section = $(this).attr('href');
+      if (typeof ga !== "undefined") {
+        ga('send', { hitType: 'event', eventCategory: 'click', eventAction: button, eventLabel: section});
+      }
+  });
+
 });
