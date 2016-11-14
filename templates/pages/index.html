@@ -12,21 +12,9 @@
   }
 %}
 
-{% block header %}
-  <header class="container-fluid">
-    <div class="heading-text">
-      <h2 class="logo-text text1">A conference<br> on India's payments ecosystem</h2>
-      <h3 class="text2">MLR convention center, Bangalore</h3>
-      <h3 class="venue-text">7&#8211;8 December 2016</h3>
-      <button href="#tickets" class="button smooth-scroll buy-tickets-btn" target="_blank">Buy tickets</button>
-    </div>
-  {% block banner %}{% endblock %}
-  </header>
-{% endblock %}
-
 {% block navtype %}
 <div id="nav-home">
-  <nav class="navbar" id="site-nav" role="navigation">
+  <nav class="navbar navbar-fixed-top" id="site-nav" role="navigation">
     <div class="container semibold">
      <!-- Brand and toggle get grouped for better mobile display -->
     
@@ -55,6 +43,18 @@
      </div>
   </nav>
 </div>
+{% endblock %}
+
+{% block header %}
+  <header class="container-fluid">
+    <div class="heading-text">
+      <h2 class="logo-text text1">A conference<br> on India's payments ecosystem</h2>
+      <h3 class="text2">MLR convention center, Bangalore</h3>
+      <h3 class="venue-text">7&#8211;8 December 2016</h3>
+      <button href="#tickets" class="button smooth-scroll buy-tickets-btn" target="_blank">Buy tickets</button>
+    </div>
+  {% block banner %}{% endblock %}
+  </header>
 {% endblock %}
 
 {% block footerscripts %}
@@ -89,17 +89,7 @@
 <script>    
   $(function(){   
     //Boxoffice widget    
-    var boxofficeUrl = "https://boxoffice.hasgeek.com"; 
-    var username, userphone, useremail;   
-    {% if g.user %}   
-      {% if g.user.fullname %}    
-        username = "{{ g.user.fullname }}";   
-      {% endif %}   
-      {% if g.user.phone %}   
-        userphone = "{{ g.user.phone }}";   
-      {% endif %}   
-      useremail = "{{ g.user.email }}";   
-    {% endif %}   
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";  
     $.get({   
       url: boxofficeUrl+"/api/1/boxoffice.js",
       crossDomain: true   
@@ -109,10 +99,7 @@
       document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
       window.Boxoffice.init({   
         org: 'hasgeek',   
-        itemCollection: '06c8b92e-6812-11e6-9897-b37c18073f39',
-        user_name: username,    
-        user_phone: userphone,    
-        user_email: useremail,    
+        itemCollection: '06c8b92e-6812-11e6-9897-b37c18073f39', 
         paymentDesc: '50p 2016'    
       });   
     }).fail(function(response) {    
