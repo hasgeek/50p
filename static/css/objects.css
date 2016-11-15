@@ -101,7 +101,7 @@ header {
 
   .heading-text {
     position: absolute;
-    top: 39%;
+    top: 35%;
     bottom: 0;
     left: 44%;
   }
@@ -128,14 +128,11 @@ header {
   .buy-tickets-btn {
     position: relative;
     bottom: 55px;
-    left: -80%;
+    left: -510px;
   }
 }
 
 @media (min-width: 1400px) {
-  .buy-tickets-btn {
-    left: -100%;
-  }
   .heading-text {
     left: 38%;
   }
@@ -946,7 +943,7 @@ ul.list-plain{
     min-height: 30px;
   }
   .navbar .nav > li > a, .navbar-brand {
-    font-size: 0.7em;
+    font-size: 18px;
     padding: 10px;
   }
   .dropdown-menu > li > a {    
@@ -979,7 +976,7 @@ ul.list-plain{
     height: 290px;
   }
   .navbar .nav > li > a, .navbar-brand {
-    font-size: 0.7em;
+    font-size: 18px;
     padding: 9px;
   }
 }
@@ -1111,4 +1108,8 @@ ul.list-plain{
 .helptext {
   height: 30px;
   font-style: italic;
+}
+
+#outreach-widget {
+  padding-top: 40px;
 }

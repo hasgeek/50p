@@ -1,4 +1,14 @@
 $(document).ready(function() {
+
+  $(window).scroll(function() {
+    if($(this).scrollTop() > 0 && $("#site-nav").length) {
+      $("#site-nav").addClass("navbar-fixed-top");
+    }
+    else if ($("#site-nav").length) {
+      $("#site-nav").removeClass("navbar-fixed-top");
+    }
+  });
+
   //Subscribe
   $('#subscribe').on('submit', function(event) {
     event.preventDefault();
