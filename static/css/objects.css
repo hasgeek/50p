@@ -12,6 +12,8 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 100%;
+  border: 3px solid #4c4a6f;
+  border-width: 0 0 1px;
 }
 
 .heading-text {
