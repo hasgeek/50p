@@ -30,7 +30,7 @@ a:focus {
 
 
 .fill-white     { background-color: #FFFFFF !important; color: #444; }
-
+.fill-lightgray { background-color: rgba(0,0,0,0.1) !important; color: #FCF3F3; }
 .fill-violet { background-color: #9facd8; color: #333;}
 .fill-darkviolet { background-color: #5d6490; color: #fff;}
 
