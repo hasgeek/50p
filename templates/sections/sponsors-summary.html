@@ -11,7 +11,11 @@
       </p>
       
       <p class="title-type secondary space-one-top">
-        <a class="button" href="/2016/sponsor">Become sponsor</a>
+        {%if page.title == '50p'%}
+          <a class="button" href="/2017/sponsor">Become sponsor</a>
+        {% else %}
+          <a class="button smooth-scroll" href="#sponsorship">Become sponsor</a>
+        {% endif %}
       </p>
     </div>
   </div>
