@@ -1,12 +1,13 @@
 {% extends theme('layouts/page.html') %}
 {%
   set page = {
-      'title'               : ''
+      'title'               : 'Sponsor'
     , 'description'         : ''
     , 'sections'            : [
       ('event-highlights', 'white'),
+      ('sponsorship-catalogue', 'white'),
       ('testimonials', 'white'),
-      ('sponsors-summary',          'darkviolet')
+      ('sponsors-summary', 'darkviolet')
     ]
   }
 %}
@@ -32,7 +33,8 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav center-block">
           <li><a class="logo-text brown hidden-xs" href="/2017/">50p</a></li>
-          <li><a class="brown smooth-scroll" href="#sponsorship">Sponsor</a></li>
+          <li><a class="brown smooth-scroll" href="#highlights">Highlights</a></li>
+          <li><a class="brown smooth-scroll" href="#sponsorship">Become a sponsor</a></li>
           <li><a class="brown smooth-scroll" href="#about">About us</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->   
@@ -67,6 +69,18 @@
     color: #333;
     border-width: 1px 1px 3px;
   }
+  .category-heading {
+    font-size: 1.650rem;
+    line-height: 1.30;
+    font-weight: normal;
+  }
+  .category-description {
+    margin: 0;
+  }
+  #outreach-widget .ticket-description {
+    font-size: .800rem;
+    line-height: 1.60;
+  }
 </style>
         
 <script>
@@ -83,7 +97,7 @@
       window.outreach_widget.init({
         orgName: 'hasgeek',
         itemCollection: '407d34a3-ab35-11e6-ae30-3556346076db',
-        eventName: '50p 2016'
+        eventName: '50p 2017'
       });
 
     }).fail(function(response) {
