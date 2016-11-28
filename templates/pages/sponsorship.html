@@ -32,10 +32,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav center-block">
-          <li><a class="logo-text brown hidden-xs" href="/2017/">50p</a></li>
-          <li><a class="brown smooth-scroll" href="#highlights">Highlights</a></li>
-          <li><a class="brown smooth-scroll" href="#sponsorship">Become a sponsor</a></li>
-          <li><a class="brown smooth-scroll" href="#about">About us</a></li>
+          <li><a class="logo-text brown hidden-xs" href="/2017/" tabindex="0" role="link">50p</a></li>
+          <li><a class="brown smooth-scroll" href="#highlights" tabindex="0" role="button">Highlights</a></li>
+          <li><a class="brown smooth-scroll" href="#sponsorship" tabindex="0" role="button">Become a sponsor</a></li>
+          <li><a class="brown smooth-scroll" href="#about" tabindex="0" role="button">About HasGeek</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->   
      </div>
@@ -45,9 +45,14 @@
 
 {% block header %}
   <header class="container-fluid">
-    <div class="heading-text">
-      <h2 class="logo-text text1">A conference<br> on India's payments ecosystem</h2>
-      <h3 class="text2">MLR convention center, Bangalore</h3>
+    <div class="heading-text sponsorship">
+      <h2 class="logo-text text1">Reach out to India's best developers</h2>
+      <h3 class="text2">Sponsor 50p to:</h3>
+      <ul class="text2">
+        <li>Get traction for your APIs and SDKs.</li>
+        <li>Recruit developers.</li>
+        <li>Build awareness for your brand.</li>
+      </ul>
       <h3 class="venue-text">24&#8211;25 January 2017</h3>
       <button href="#sponsorship" class="button smooth-scroll buy-tickets-btn">Become a sponsor</button>
     </div>
@@ -72,7 +77,10 @@
   .category-heading {
     font-size: 1.650rem;
     line-height: 1.30;
-    font-weight: normal;
+    font-weight: 500;
+    margin-top: 1.00rem!important;
+    margin-bottom: 0!important;
+    padding: 0 15px;
   }
   .category-description {
     margin: 0;
@@ -97,7 +105,7 @@
       window.outreach_widget.init({
         orgName: 'hasgeek',
         itemCollection: '407d34a3-ab35-11e6-ae30-3556346076db',
-        eventName: '50p 2017'
+        eventName: '50p 2016'
       });
 
     }).fail(function(response) {
