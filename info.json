@@ -9,6 +9,7 @@
     "options": {
         "assets_css": [
             "css/vendor/bootstrap.min.css",
+            "css/vendor/jquery.jscrollpane.css",
             "css/font-awesome.min.css",
             "css/typography.css",
             "css/layout.css",
@@ -18,6 +19,9 @@
         "assets_js": [
             "js/vendor/bootstrap.min.js",
             "js/vendor/jquery.mobile.custom.min.js",
+            "js/vendor/jscrollpane.min.js",
+            "js/vendor/jquery.mousewheel.js",
+            "js/vendor/ractive.min.js",
             "js/main.js",
             "js/maps.js"
         ]

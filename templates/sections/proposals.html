@@ -1,0 +1,56 @@
+<section id="proposals" class="push-two space-one-top clearfix pad-one{% if background %} fill-{{ background }}{% endif %}">
+  <h1 class="calm centered large text-center">
+    Proposals
+  </h1>
+  <div id="funnel-proposals">
+    <p class="text-center">Loading...</p>
+    {%raw%}
+    <script id="proposals-wrapper" type="text/ractive">
+      <div class="scroll-pane horizontal-only">
+        <div class="scroll-pane-content">
+          {{#proposals}}
+            <div class="card" data-toggle="modal" data-target="#{{id}}">
+              <div class="talk">
+                <p class="title"><span>{{ title }}</span></p>
+                <hr class="separator">
+                <div class="description">
+                  {{#if description.length > description_max_ch_count}}
+                    {{#if !expand}}
+                      {{{ truncateDescription(description) }}}
+                      <a href="javascript:void(0)" class="js-read-more" data-toggle="modal" data-target="#{{id}}">Read More</a>
+                    {{/if}}
+                  {{else}}
+                    {{{ description }}}
+                  {{/if}}
+                </div>
+                <p class="fullname"><span>{{ fullname }}</span></p>
+              </div>
+            </div>
+            <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">{{title}}</h4>
+                  </div>
+                  <div class="modal-body">
+                    {{{ description }}}
+                  </div>
+                  <div class="modal-footer">
+                    <a type="button" class="btn btn-primary" href="{{url}}" target="_blank">Vote</a>
+                    <a type="button" class="btn btn-primary" href="{{url}}/#comments" target="_blank">Discuss</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/}}
+        </div>
+      </div>
+    </script>
+    {%endraw%}
+  </div>
+  <div class="text-center space-one">
+    <p class="secondary text-center">Been working on something interesting lately?</p>
+    <a class="button gap-1q text-center secondary" href="https://50p.talkfunnel.com/2017/" target="_blank">Propose to speak</a>
+  </div>
+</section>
