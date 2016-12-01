@@ -1,13 +1,24 @@
-var parseProposalJson = function(json) {
+var sendGA = function(category, action, label) {
+  if (typeof ga !== "undefined") {
+    ga('send', { hitType: 'event', eventCategory: category, eventAction: action, eventLabel: label});
+  }
+};
 
-  console.log("length", json.proposals.length);
+var getElemWidth = function(elem) {
+  var card_width = $(elem).css('width');
+  var card_margin = $(elem).css('margin-left');
+  var card_total_width = parseInt(card_width, 10) + 2 * parseInt(card_margin, 10);
+  return card_total_width;
+};
+
+var parseProposalJson = function(json) {
 
   var proposal_ractive = new Ractive({
     el: '#funnel-proposals',
     template: '#proposals-wrapper',
     data: {
       proposals: json.proposals,
-      description_max_ch_count: 286,
+      description_max_ch_count: 270,
       truncateDescription: function(description) {
         var max_character_count = this.get('description_max_ch_count');
         if (description.length < max_character_count) {
@@ -26,18 +37,31 @@ var parseProposalJson = function(json) {
         while ((childElem.width() > parentWidth) || (childElem.height() > parentHeight)) {
           childElem.css('font-size', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
         }
-      }
+        childElem.css('line-height', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
+      };
 
-      $.each($('.card .title'), function(index, title){
+      $.each($('.card .title'), function(index, title) {
         updateFontSize(title);
       });
 
-      $(".scroll-pane-content").css('width', json.proposals.length * 484 + 'px');
+      //Set width of content div to enable horizontal scrolling
+      $(".scroll-pane-content").css('width', json.proposals.length * getElemWidth(".card") + 'px');
 
       $('.scroll-pane').jScrollPane({showArrows: true});
+
+      $(window).resize(function() {
+        $(".scroll-pane-content").css('width', json.proposals.length * getElemWidth(".card") + 'px');
+        $('.scroll-pane').jScrollPane({showArrows: true});
+      });
+
+      $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
+        var action = $(this).data('label');
+        var target = $(this).data('target');
+        sendGA('click', action, target);
+      });
     }
   });
-}
+};
 
 $(document).ready(function() {
 
@@ -57,15 +81,6 @@ $(document).ready(function() {
     $('html,body').animate({scrollTop:sectionPos}, '900');
   });
 
-  // Function that tracks a click button in Google Analytics.
-  $('.button').click(function(event) {
-      var button = $(this).html();
-      var section = $(this).attr('href');
-      if (typeof ga !== "undefined") {
-        ga('send', { hitType: 'event', eventCategory: 'click', eventAction: button, eventLabel: section});
-      }
-  });
-
   // For proposals
   var proposals_url = 'https://50p.talkfunnel.com/2017/json';
 
@@ -80,5 +95,18 @@ $(document).ready(function() {
       }
     });//eof ajax call
   }
+
+  // Function that tracks a click button in Google Analytics.
+  $('.button').click(function(event) {
+    var button = $(this).html();
+    var section = $(this).attr('href');
+    sendGA('click', button, section);
+  });
+
+  $('.click').click(function(event) {
+    var target = $(this).data('target');
+    var action = $(this).data('label');
+    sendGA('click', action, target);
+  });
 
 });
