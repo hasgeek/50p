@@ -1,69 +1,70 @@
-var sendGA = function(category, action, label) {
-  if (typeof ga !== "undefined") {
-    ga('send', { hitType: 'event', eventCategory: category, eventAction: action, eventLabel: label});
-  }
-};
-
-var getElemWidth = function(elem) {
-  var card_width = $(elem).css('width');
-  var card_margin = $(elem).css('margin-left');
-  var card_total_width = parseInt(card_width, 10) + 2 * parseInt(card_margin, 10);
-  return card_total_width;
-};
-
-var parseProposalJson = function(json) {
-
-  var proposal_ractive = new Ractive({
-    el: '#funnel-proposals',
-    template: '#proposals-wrapper',
-    data: {
-      proposals: json.proposals,
-      description_max_ch_count: 270,
-      truncateDescription: function(description) {
-        var max_character_count = this.get('description_max_ch_count');
-        if (description.length < max_character_count) {
-          return description;
-        } else {
-          return description.slice(0, max_character_count) + '<span>...</span>';
-        }
-      }
-    },
-    complete: function() {
-      var updateFontSize = function(elem) {
-        var fontStep = 1;
-        var parentWidth = $(elem).width();
-        var parentHeight = parseInt($(elem).css('max-height'), 10);
-        var childElem = $(elem).find('span');
-        while ((childElem.width() > parentWidth) || (childElem.height() > parentHeight)) {
-          childElem.css('font-size', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
-        }
-        childElem.css('line-height', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
-      };
-
-      $.each($('.card .title'), function(index, title) {
-        updateFontSize(title);
-      });
-
-      //Set width of content div to enable horizontal scrolling
-      $(".scroll-pane-content").css('width', json.proposals.length * getElemWidth(".card") + 'px');
-
-      $('.scroll-pane').jScrollPane({showArrows: true});
-
-      $(window).resize(function() {
-        $(".scroll-pane-content").css('width', json.proposals.length * getElemWidth(".card") + 'px');
-        $('.scroll-pane').jScrollPane({showArrows: true});
-      });
-
-      $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
-        var action = $(this).data('label');
-        var target = $(this).data('target');
-        sendGA('click', action, target);
-      });
-    }
-  });
-};
-
 $(document).ready(function() {
+
+  var sendGA = function(category, action, label) {
+    if (typeof ga !== "undefined") {
+      ga('send', { hitType: 'event', eventCategory: category, eventAction: action, eventLabel: label});
+    }
+  };
+
+  var updateFontSize = function(elem) {
+    var fontStep = 1;
+    var parentWidth = $(elem).width();
+    var parentHeight = parseInt($(elem).css('max-height'), 10);
+    var childElem = $(elem).find('span');
+    while ((childElem.width() > parentWidth) || (childElem.height() > parentHeight)) {
+      childElem.css('font-size', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
+    }
+    childElem.css('line-height', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
+  };
+
+  var getElemWidth = function(elem) {
+    var card_width = $(elem).css('width');
+    var card_margin = $(elem).css('margin-left');
+    var card_total_width = parseInt(card_width, 10) + 2 * parseInt(card_margin, 10);
+    return card_total_width;
+  };
+
+  var enableScroll = function(items_length) {
+    $(".mCustomScrollbar").css('width', items_length * getElemWidth(".card") + 'px');
+    $('.mCustomScrollbar').mCustomScrollbar({ axis:"x", theme: "dark-3"});
+  };
+
+  var parseProposalJson = function(json) {
+    var proposal_ractive = new Ractive({
+      el: '#funnel-proposals',
+      template: '#proposals-wrapper',
+      data: {
+        proposals: json.proposals,
+        description_max_ch_count: 270,
+        truncateDescription: function(description) {
+          var max_character_count = this.get('description_max_ch_count');
+          if (description.length < max_character_count) {
+            return description;
+          } else {
+            return description.slice(0, max_character_count) + '<span>...</span>';
+          }
+        }
+      },
+      complete: function() {
+        $.each($('.card .title'), function(index, title) {
+          updateFontSize(title);
+        });
+
+        //Set width of content div to enable horizontal scrolling
+        enableScroll(json.proposals.length);
+
+        $(window).resize(function() {
+          enableScroll(json.proposals.length);
+        });
+
+        $('#funnel-proposals .click, #funnel-proposals .btn').click(function(event) {
+          var action = $(this).data('label');
+          var target = $(this).data('target');
+          sendGA('click', action, target);
+        });
+      }
+    });
+  };
 
   $(window).scroll(function() {
     if($(this).scrollTop() > 0 && $("#site-nav").length) {

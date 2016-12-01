@@ -6,26 +6,24 @@
     <p class="text-center">Loading...</p>
     {%raw%}
     <script id="proposals-wrapper" type="text/ractive">
-      <div class="scroll-pane horizontal-only">
-        <div class="scroll-pane-content">
-          {{#proposals}}
-            <div class="card click" data-toggle="modal" data-target="#{{id}}" data-label="Funnel proposal card">
-              <div class="talk">
-                <p class="title"><span>{{title}}</span></p>
-                <hr class="separator">
-                <div class="description">
-                  {{#if description.length > description_max_ch_count}}
-                    {{{truncateDescription(description)}}}
-                    <a href="javascript:void(0)" class="js-read-more click" data-toggle="modal" data-target="#{{id}}"data-label="Read more">Read More</a>
-                  {{else}}
-                    {{{description}}}
-                  {{/if}}
-                </div>
-                <p class="fullname"><span>{{fullname}}</span></p>
+      <div class="mCustomScrollbar proposals-wrapper" data-mcs-theme="dark">
+        {{#proposals}}
+          <div class="card click" data-toggle="modal" data-target="#{{id}}" data-label="Funnel proposal card">
+            <div class="talk">
+              <p class="title"><span>{{title}}</span></p>
+              <hr class="separator">
+              <div class="description">
+                {{#if description.length > description_max_ch_count}}
+                  {{{truncateDescription(description)}}}
+                  <a href="javascript:void(0)" class="js-read-more click" data-toggle="modal" data-target="#{{id}}"data-label="Read more">Read More</a>
+                {{else}}
+                  {{{description}}}
+                {{/if}}
               </div>
+              <p class="fullname"><span>{{fullname}}</span></p>
             </div>
-          {{/}}
-        </div>
+          </div>
+        {{/}}
       </div>
       {{#proposals}}
       <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
