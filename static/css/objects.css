@@ -1240,7 +1240,7 @@ ul.list-plain{
   }
 }
 
-.card {
+.proposal-card  {
   display: inline-block;
   vertical-align: top;
   box-shadow: 0 0 2px rgba(0,0,0,0.6);
@@ -1256,15 +1256,15 @@ ul.list-plain{
 }
 
 @media (min-width: 768px) {
-  .card {
+  .proposal-card  {
     width: 420px;
     height: 380px;
     margin: 30px 15px;
   }
 }
 
-.card:focus,
-.card:active {
+.proposal-card :focus,
+.proposal-card :active {
   outline: none;
 }
 

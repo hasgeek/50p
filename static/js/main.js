@@ -25,7 +25,7 @@ $(document).ready(function() {
   };
 
   var enableScroll = function(items_length) {
-    $(".mCustomScrollbar").css('width', items_length * getElemWidth(".card") + 'px');
+    $(".mCustomScrollbar").css('width', items_length * getElemWidth(".proposal-card") + 'px');
     $('.mCustomScrollbar').mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10, alwaysShowScrollbar: 0});
   };
 
