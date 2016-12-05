@@ -1225,7 +1225,7 @@ ul.list-plain{
 .proposals-wrapper
 {
   width: 100%;
-  height: 550px;
+  height: 480px;
   overflow-x: auto;
   outline: none;
 }
@@ -1233,7 +1233,7 @@ ul.list-plain{
 @media (min-width: 768px) {
   .proposals-wrapper
   {
-    height: 430px;
+    height: 440px;
   }
 }
 
@@ -1245,7 +1245,7 @@ ul.list-plain{
   padding: 0;
   background-color: #fff;
   width: 290px;
-  height: 460px;
+  height: 400px;
   margin: 30px 10px;
   position: relative;
   overflow: hidden;
@@ -1254,14 +1254,10 @@ ul.list-plain{
 
 @media (min-width: 768px) {
   .card {
-    width: 450px;
-    height: 360px;
+    width: 420px;
+    height: 380px;
     margin: 30px 15px;
   }
-}
-
-.card:hover {
-  background-color: rgba(201, 168, 102, 0.6);
 }
 
 .card:focus,
@@ -1292,16 +1288,26 @@ ul.list-plain{
 }
 
 .talk .description {
-  height: 330px;
+  max-height: 270px;
   overflow: hidden;
   padding: 15px 15px 0;
-  position: relative;
-  font-size: 15px;
+  font-size: 16px;
+}
+
+.description:after {
+  content: "";
+  width: 100%;
+  height: 52px;
+  position: absolute;
+  left: 0;
+  bottom: 52px;
+  z-index: 4;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 70%, #fff 100%);
 }
 
 @media (min-width: 768px) {
   .talk .description {
-    height: 240px;
+    max-height: 250px;
     font-size: 18px;
   }
 }
@@ -1312,7 +1318,6 @@ ul.list-plain{
 .proposals-wrapper .description pre {
   background: transparent;
   border: 0;
-  font-size: 18px;
   font-family: inherit;
   margin: 0;
   padding: 0;
@@ -1322,17 +1327,6 @@ ul.list-plain{
 .proposals-wrapper .description ol {
   margin: 0;
   padding: 0 0 0 20px;
-}
-
-.js-read-more {
-  color: #428bca;
-  text-decoration: none;
-  border: 0;
-  margin: 5px 0;
-  position: absolute;
-  right: 15px;
-  bottom: 0;
-  font-size: 18px;
 }
 
 .talk .fullname {
@@ -1346,6 +1340,17 @@ ul.list-plain{
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.modal-description-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.modal-description {
+  font-size: 18px;
+  margin: 0 0 10px;
 }
 
 body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {

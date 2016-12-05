@@ -13,12 +13,7 @@
               <p class="title"><span>{{title}}</span></p>
               <hr class="separator">
               <div class="description">
-                {{#if description.length > description_max_ch_count}}
-                  {{{truncateDescription(description)}}}
-                  <a href="javascript:void(0)" class="js-read-more click" data-toggle="modal" data-target="#{{id}}"data-label="Read more">Read More</a>
-                {{else}}
-                  {{{description}}}
-                {{/if}}
+                {{{objective}}}
               </div>
               <p class="fullname"><span>{{fullname}}</span></p>
             </div>
@@ -31,10 +26,13 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">{{title}}</h4>
+              <h3 class="modal-title">{{title}}</h3>
             </div>
-            <div class="modal-body description">
-              {{{description}}}
+            <div class="modal-body">
+              <h4 class="modal-description-title">Abstract</h4>
+              <div class="modal-description">{{{description}}}</div>
+              <h4 class="modal-description-title">Outline</h4>
+              <div class="modal-description">{{{objective}}}</div>
             </div>
             <div class="modal-footer">
               <a type="button" class="btn btn-primary" href="{{url}}" target="_blank" data-target="{{url}}" data-label="Vote">Vote</a>

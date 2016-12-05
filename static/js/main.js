@@ -14,7 +14,6 @@ $(document).ready(function() {
     while ((childElem.width() > parentWidth) || (childElem.height() > parentHeight)) {
       childElem.css('font-size', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
     }
-    childElem.css('line-height', parseInt(childElem.css('font-size'), 10) - fontStep + 'px');
   };
 
   var getElemWidth = function(elem) {
@@ -34,16 +33,7 @@ $(document).ready(function() {
       el: '#funnel-proposals',
       template: '#proposals-wrapper',
       data: {
-        proposals: json.proposals,
-        description_max_ch_count: 270,
-        truncateDescription: function(description) {
-          var max_character_count = this.get('description_max_ch_count');
-          if (description.length < max_character_count) {
-            return description;
-          } else {
-            return description.slice(0, max_character_count) + '<span>...</span>';
-          }
-        }
+        proposals: json.proposals
       },
       complete: function() {
         $.each($('.card .title'), function(index, title) {
