@@ -1236,7 +1236,7 @@ ul.list-plain{
 @media (min-width: 768px) {
   .proposals-wrapper
   {
-    height: 440px;
+    height: 460px;
   }
 }
 
@@ -1280,7 +1280,7 @@ ul.list-plain{
 
 @media (min-width: 768px) {
   .talk .title {
-    max-height: 60px; /* fit text in one line */
+    max-height: 55px; /* fit text in one line */
   }
 }
 

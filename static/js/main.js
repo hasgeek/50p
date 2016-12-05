@@ -19,13 +19,14 @@ $(document).ready(function() {
   var getElemWidth = function(elem) {
     var card_width = $(elem).css('width');
     var card_margin = $(elem).css('margin-left');
-    var card_total_width = parseInt(card_width, 10) + 2 * parseInt(card_margin, 10);
+    var card_total_width = parseInt(card_width, 10) + 2.5 * parseInt(card_margin, 10);
+    console.log("card_total_width", card_total_width);
     return card_total_width;
   };
 
   var enableScroll = function(items_length) {
     $(".mCustomScrollbar").css('width', items_length * getElemWidth(".card") + 'px');
-    $('.mCustomScrollbar').mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10});
+    $('.mCustomScrollbar').mCustomScrollbar({ axis:"x", theme: "dark-3", scrollInertia: 10, alwaysShowScrollbar: 0});
   };
 
   var parseProposalJson = function(json) {
