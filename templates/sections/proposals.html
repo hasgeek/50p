@@ -2,11 +2,12 @@
   <h1 class="calm centered large text-center">
     Proposals
   </h1>
-  <div id="funnel-proposals" class="proposals-wrapper">
+  <div id="funnel-proposals">
     <p class="text-center">Loading...</p>
     {%raw%}
     <script id="proposals-wrapper" type="text/ractive">
-      <div class="mCustomScrollbar proposals-wrapper" data-mcs-theme="dark">
+      <div class="proposals">
+      <div class="mCustomScrollbar" data-mcs-theme="dark">
         {{#proposals}}
           <div class="proposal-card click" data-toggle="modal" data-target="#{{id}}" data-label="Funnel proposal card">
             <div class="talk">
@@ -19,6 +20,7 @@
             </div>
           </div>
         {{/}}
+      </div>
       </div>
       {{#proposals}}
       <div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

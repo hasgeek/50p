@@ -37,7 +37,7 @@ $(document).ready(function() {
         proposals: json.proposals
       },
       complete: function() {
-        $.each($('.card .title'), function(index, title) {
+        $.each($('.proposal-card .title'), function(index, title) {
           updateFontSize(title);
         });
 

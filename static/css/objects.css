@@ -1222,17 +1222,19 @@ ul.list-plain{
   margin-left: 50px;
 }
 
-.proposals-wrapper
+.proposals
 {
   width: 100%;
   height: 480px;
   overflow: auto;
   outline: none;
   padding-left: 15px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
-  .proposals-wrapper
+  .proposals
   {
     height: 460px;
   }
@@ -1314,10 +1316,10 @@ ul.list-plain{
   }
 }
 
-.proposals-wrapper .description p, 
-.proposals-wrapper .description ul,
-.proposals-wrapper .description ol,
-.proposals-wrapper .description pre {
+.proposal-card .description p, 
+.proposal-card .description ul,
+.proposal-card .description ol,
+.proposal-card .description pre {
   background: transparent;
   border: 0;
   font-family: inherit;
@@ -1325,8 +1327,8 @@ ul.list-plain{
   padding: 0;
 }
 
-.proposals-wrapper .description ul,
-.proposals-wrapper .description ol {
+.proposal-card .description ul,
+.proposal-card .description ol {
   margin: 0;
   padding: 0 0 0 20px;
 }
