@@ -1229,8 +1229,6 @@ ul.list-plain{
   overflow: auto;
   outline: none;
   padding-left: 15px;
-  position: relative;
-  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -1272,15 +1270,16 @@ ul.list-plain{
   font-weight: bold;
   font-size: 18px;
   min-height: 50px;
-  max-height: 70px; /* fit text in one line */
+  max-height: 65px; /* fit text in one line */
   margin: 0 0 10px;
   padding: 15px 15px 0;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 @media (min-width: 768px) {
   .talk .title {
     max-height: 55px; /* fit text in one line */
+    line-height: 1.2;
   }
 }
 
