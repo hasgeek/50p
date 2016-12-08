@@ -44,16 +44,12 @@
 {% endblock %}
 
 {% block header %}
+  {% from theme("data/sponsorship-summary.html") import event %}
   <header class="container-fluid">
     <div class="heading-text sponsorship">
-      <h2 class="logo-text text1">Reach out to India's best developers</h2>
-      <h3 class="text2">Sponsor 50p to:</h3>
-      <ul class="text2">
-        <li>Get traction for your APIs and SDKs.</li>
-        <li>Recruit developers.</li>
-        <li>Build awareness for your brand.</li>
-      </ul>
-      <h3 class="venue-text">24&#8211;25 January 2017</h3>
+      <h2 class="logo-text text1">{{ event.title|safe }}</h2>
+      <h3 class="text2">{{ event.why_sponsor|safe }}</h3>
+      <h3 class="venue-text">{{ event.date|safe }}</h3>
       <button href="#sponsorship" class="button smooth-scroll buy-tickets-btn">Become a sponsor</button>
     </div>
   {% block banner %}{% endblock %}

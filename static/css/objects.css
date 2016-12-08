@@ -240,7 +240,7 @@ header {
         font-size: 2rem;
         text-shadow: rgba(0,0,0,0.5) 0 0 1px;
     }
-    .js .venue-home .city-level    { width: 100%; }
+    .js .venue-home .city-level    { width: 80%; margin: 15px auto;}
 }
 @media (min-height: 300px) { .js .leaflet-map { height: 250px; } }
 @media (min-height: 450px) { .js .leaflet-map { height: 425px; } }
@@ -1275,13 +1275,12 @@ ul.list-plain{
   max-height: 65px; /* fit text in one line */
   margin: 0 0 10px;
   padding: 15px 15px 0;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .talk .title {
     max-height: 55px; /* fit text in one line */
-    line-height: 1.2;
   }
 }
 
@@ -1359,4 +1358,61 @@ ul.list-plain{
 
 body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
   margin-right: 0!important;
+}
+
+.runup-event-box {
+  width: 70%;
+  margin: 20px auto;
+  box-shadow: 0 0 2px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .runup-event-box {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin: 20px 2.35%;
+    min-height: 335px;
+  }
+  .runup-event-box.featured {
+    width: 50%;
+    display: block;
+    margin: 1% auto 2%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .runup-event-box {
+    width: 30%;
+    margin: 1.2%;
+  }
+}
+
+.runup-event-box .banner {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.runup-event-box .video-link {
+  position: relative;
+}
+
+.runup-event-box .video-link .fa{
+  position: absolute;
+  top: 35%;
+  font-size: 40px;
+  color: #fff;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.runup-event-box .event-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.runup-event-box .event-speaker {
+  font-size: 18px;
 }

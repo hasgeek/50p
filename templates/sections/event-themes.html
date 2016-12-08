@@ -1,16 +1,16 @@
+{% from theme("data/event-summary.html") import event %}
 <section class="event-themes push-two space-one-top clearfix{% if background %} fill-{{ background }}{% endif %}" id="announcements">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 regular-prose semibold">
-        <p>Change is in the air.  After e-comm, newer ways of buying and selling are opening up through new products targeting a more open banking sector, courtesy the RBI. People's phones haven’t replaced their wallets, but big money’s being wagered on that happening within the next few years.</p>
-        <p>You'd still have to navigate a maze of regulations, and at least one SLA.</p>
+       {{ event.about.leftside_blurb|safe }}
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 regular-prose semibold">
-        <p>There’s opportunity here - and risk. It pays to have a good understanding of how it all works before committing to a new technology, product, or partner.</p>
-        <p>That's why HasGeek is organizing a new conference on the payments landscape, aiming to bridge the gap between developers and business, merchants and consumers, and banks and regulators. Come, learn and share.</p>
+       {{ event.about.rightside_blurb|safe }}
+      </div>
+      <div class="col-xs-12 regular-prose semibold space-one">
+       {{ event.about.center_blurb|safe }}
       </div>
     </div>
-    <p class="space-half text-center regular-prose semibold"><a href="http://hasgeek.us2.list-manage.com/subscribe?u=c84c1486d2d6a025417c5d146&id=47afa263c6" target="_blank" class="orange click" data-label="Sign up" data-target="HasGeek sign up page">Sign up</a> to receive updates and information about tickets, speakers, schedule and more.</p>
-    <p class="secondary text-center space-one-bottom">For more updates, follow us on <a href="https://www.facebook.com/50pConf" target="_blank" class="orange click" data-label="Facebook" data-target="Facebook">Facebook</a>, <a href="https://twitter.com/50pConf" target="_blank" class="orange" data-label="Twitter" data-target="Twitter">Twitter</a> and <a href="https://www.youtube.com/user/hasgeek" title="Watch the latest videos from HasGeek" target="_blank" class="orange click" data-label="YouTube" data-target="YouTube">YouTube</a>.</p>
   </div>
 </section>

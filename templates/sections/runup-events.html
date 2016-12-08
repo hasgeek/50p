@@ -1,0 +1,23 @@
+{% from theme("data/runup-summary.html") import event %}
+<section id="testimonials" class="push-two clearfix{% if background %} fill-{{ background }}{% endif %}" id="annoucements">
+  <h2 class="calm centered large text-center">Runup events</h2>
+  <div class="container">
+    {% for event in event.runup_events  %}
+      <div class="runup-event-box {% if event.featured %}featured{% endif %}">
+        {% if event.video_url %}
+          <a href="{{event.video_url}}" class="video-link" target="_blank"><i class="fa fa-play-circle-o"></i><img src={{ event.banner}} class="banner"/></a>
+        {% else %}
+          <img src="{{ event.banner}}" class="banner"/>
+        {% endif %}
+        <div class="pad-half push-one-bottom">
+          <p class="space-1q event-title">{{ event.title }}</p>
+          <p class="space-1q-top nospace-bottom event-speaker">{{ event.speaker }}</p>
+          {%if event.date %}<p class="space-1q-top nospace-bottom"><i class="fa fa-calendar"></i> {{ event.date }}</p>{% endif %}
+          {%if event.time %}<p class="space-1q-top nospace-bottom"><i class="fa fa-clock-o"></i> {{ event.time }}</p>{% endif %}
+          <p class="space-1q-top nospace-bottom"><i class="fa fa-map-marker"></i> {{ event.venue|safe }}</p>
+          {% if event.rsvp %}<a href="{{event.rsvp}}" class="button tiny space-half-top nospace-bottom" target="_blank">Interested</a>{% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

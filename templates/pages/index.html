@@ -6,6 +6,7 @@
     , 'sections'            : [      
         ('event-themes',               ''),
         ('proposals',               ''),
+        ('runup-events',               ''),
         ('tickets',                   ''),
         ('venue-summary',             ''),
         ('sponsors-summary',          'darkviolet')
@@ -48,11 +49,12 @@
 {% endblock %}
 
 {% block header %}
+  {% from theme("data/event-summary.html") import event %}
   <header class="container-fluid">
     <div class="heading-text">
-      <h2 class="logo-text text1">A conference<br> on India's payments ecosystem</h2>
-      <h3 class="text2">MLR convention center, Bangalore</h3>
-      <h3 class="venue-text">24&#8211;25 January 2017</h3>
+      <h2 class="logo-text text1">{{ event.title|safe }}</h2>
+      <h3 class="text2">{{ event.venue|safe }}</h3>
+      <h3 class="venue-text">{{ event.date|safe }}</h3>
       <button href="#tickets" class="button smooth-scroll buy-tickets-btn">Buy tickets</button>
     </div>
   {% block banner %}{% endblock %}

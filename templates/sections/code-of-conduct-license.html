@@ -1,11 +1,11 @@
+{% from theme("data/code-of-conduct.html") import code_conduct %}
 <section class="clearfix{% if background %} fill-{{ background }}{% endif %}">
 <div class="container">  
   <div class="row-fluid">
-    <h3 class="col-lg-3 secondary all-caps space-one-bottom prose-type medium">License</h3>
+    <h3 class="large space-one-bottom no-space-top">License</h3>
     
-    <div class="col-lg-9 secondary normal">
-      <p>This Code of Conduct was forked from the PyCon US Code of Conduct, which in turn was forked from the Geek Feminism wiki, created by the Ada Initiative and other volunteers and available under a Creative Commons Zero license.</p>
-       <p>The Conference Code of Conduct for 50p 2017 is licensed under a Creative Commons Attribution 3.0 Unported License.</p>
+    <div class="regular">
+      {{ code_conduct.license|safe }}
     </div>
   </div>
   </div>
