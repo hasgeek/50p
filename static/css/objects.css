@@ -1426,6 +1426,9 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
     display: inline-block;
     vertical-align: top;
   }
+}
+
+@media (min-width: 1200px) {
   .media-left {
     width: 30%;
   }
