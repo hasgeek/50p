@@ -5,7 +5,7 @@
     {% for event in event.runup_events  %}
       <div class="runup-event-box {% if event.featured %}featured{% endif %}">
         {% if event.video_url %}
-          <a href="{{event.video_url}}" class="video-link" target="_blank"><i class="fa fa-play-circle-o"></i><img src={{ event.banner}} class="banner"/></a>
+          <a href="{{event.video_url}}" class="video-link click" target="_blank" data-target="{{event.video_url}}" data-label="Runup event video"><i class="fa fa-play-circle-o"></i><img src={{ event.banner}} class="banner"/></a>
         {% else %}
           <img src="{{ event.banner}}" class="banner"/>
         {% endif %}
