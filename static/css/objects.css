@@ -1417,16 +1417,42 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   font-size: 18px;
 }
 
+.media-object {
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .media-body, .media-left {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .media-left {
+    width: 30%;
+  }
+}
+
+.offer-50p-logo {
+  height: 50px;
+  vertical-align: top;
+}
+
+.offer-ken-logo {
+  height: 45px;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.media-body .offer-heading {
+  margin: 5px auto 0;
+}
+
 .offer-banner {
   position: relative;
-}
-.offer-banner .panel-body p {
-  margin-left: 55px;
 }
 .banner-ribbon{
   position: absolute;
   top: 0;
-  left: 15px;
+  right: 15px;
   z-index: 1;
   color: #eee;
   font-size: 2em;
