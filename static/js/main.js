@@ -20,7 +20,6 @@ $(document).ready(function() {
     var card_width = $(elem).css('width');
     var card_margin = $(elem).css('margin-left');
     var card_total_width = parseInt(card_width, 10) + 2.5 * parseInt(card_margin, 10);
-    console.log("card_total_width", card_total_width);
     return card_total_width;
   };
 
