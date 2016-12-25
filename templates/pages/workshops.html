@@ -1,0 +1,14 @@
+{% extends theme('layouts/page.html') %}
+{% from theme("data/workshop-schedule.html") import schedule %}
+{%
+  set page = {
+      'title'       : 'Workshops'
+    , 'description' : '12 - 13 February 2014'
+    , 'sections'    : [
+        ('workshop-intro',    'white')
+      , ('workshop-sessions',  'brown')
+      , ('workshop-venue',  '')
+      , ('sponsors-summary',   'brown')
+    ]
+  }
+%}
