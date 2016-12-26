@@ -243,7 +243,7 @@ header {
     .js .venue-home .city-level    { width: 80%; margin: 15px auto;}
 }
 @media (min-height: 300px) { .js .leaflet-map { height: 250px; } }
-@media (min-height: 450px) { .js .leaflet-map { height: 425px; } }
+@media (min-height: 450px) { .js .leaflet-map { height: 304px; } }
 @media (min-height: 550px) { .js .venue-home .leaflet-map { height: 535px; } }
 @media (min-height: 630px) { .js .venue-home .leaflet-map { height: 620px; } }
 @media (min-height: 725px) { .js .venue-home .leaflet-map { height: 725px; } }
@@ -867,7 +867,7 @@ ul.list-plain{
 }
 
 .speaker-photo{
-  width: 30%;
+  width: 60%;
 }
 
 .popover{
@@ -1421,10 +1421,17 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   display: inline-block;
 }
 
+.offer-banner .media {
+  margin-top: 35px;
+}
+
 @media (min-width: 768px) {
   .media-body, .media-left {
     display: inline-block;
     vertical-align: top;
+  }
+  .offer-banner .media {
+    margin-top: 0;
   }
 }
 
@@ -1452,6 +1459,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 .offer-banner {
   position: relative;
 }
+
 .banner-ribbon{
   position: absolute;
   top: 0;

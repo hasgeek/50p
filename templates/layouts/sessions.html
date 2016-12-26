@@ -7,7 +7,7 @@
   {% for item in session.list %}
     {% if not item.other %}
     <div id="{{ item.id }}" class="row-fluid container push-line">
-      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible space-two-bottom clearfix text-right">
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 legible space-two-bottom clearfix">
         <h3 class="all-caps nospace-top semibold">{{ item.title|safe }}</h3>
         <img class="speaker-photo" src="{{ item.photo[0] }}" alt="">
         <img class="speaker-photo" src="{{ item.photo[1] }}" alt="">
@@ -18,10 +18,8 @@
         <h3 class="all-caps nospace-top semibold">{{ item.title|safe }}</h3>
         <div class="prose-type regular-prose space-three-bottom">
           {{ item.blurb|safe }}
-          <ul class="list-plain secondary prose space-one-top">
-            <li class="flushleft"><a href="{{ item.link }}" target="_blank">Funnel Proposal</a></li>
-            {% if item.preview %}<li class="flushright"><a target="_blank" href="{{ item.preview }}">Preview</a></li>{% endif %}
-          </ul>
+          <p><a href="{{ item.link }}" target="_blank" class="orange">View funnel proposal</a></p>
+          {% if item.preview %}<p><a target="_blank" href="{{ item.preview }}">Preview</a></p>{% endif %}
         </div>
       </div>
     </div>
