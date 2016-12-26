@@ -18,7 +18,7 @@
         <h3 class="all-caps nospace-top semibold">{{ item.title|safe }}</h3>
         <div class="prose-type regular-prose space-three-bottom">
           {{ item.blurb|safe }}
-          <p><a href="{{ item.link }}" target="_blank" class="orange">View funnel proposal</a></p>
+          {% if item.link %}<p><a href="{{ item.link }}" target="_blank" class="orange">View funnel proposal</a></p>{% endif %}
           {% if item.preview %}<p><a target="_blank" href="{{ item.preview }}">Preview</a></p>{% endif %}
         </div>
       </div>
