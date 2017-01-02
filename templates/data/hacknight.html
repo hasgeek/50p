@@ -1,0 +1,22 @@
+{% 
+  set event = {
+      'title' : '50p Hacknight'
+    , 'when'  : '12 - 14 Jan 2017'
+    , 'blurb' : '<strong>What is the 50p hacknight about?</strong><p>This hacknight is for designers and developers. You should attend this hacknight if you want to:<br>1. Build payment apps from scratch.<br>2. If you have an existing app, integrate payments in your app, work on API access, and/or improve the UI of your app.</p><strong>What will you get from this hacknight?</strong><p>1. Access to APIs from banks which you can integrate with your app. We'll announce details shortly.<br>2. Learn from designers on how to improve the UI of your app, what concrete steps can be taken, towards what goals.<br>3. Mentorship from people from the industry who can guide you in integrating APIs in your app, and give you feedback on your projects.</p><strong>Format:</strong><p>The hacknight will start at 7 PM on Friday, 13 Jan, with a talk on UI design (details will be announced later this week).</p><p>Participants attending the hacknight should assemble at Razorpay by 8 PM. We will have a round of introductions where participants introduce themselves and / or their projects. This will be followed by introductions to the banking APIs and how participants can integrate them in their projects.</p><p>By 10 PM, participants can start working on their projects. Mentors will be present throughout the night to advise and review projects.</p><p>Participants should demonstrate their work at noon on Saturday, 14 January.</p><p>Dinner, breakfast, lunch and refreshments will be provided during the hacknight.</p><strong>Criteria:</strong><p>The 50p hacknight is open to designers and programmers. Participants who want to solve design challenges at this hacknight should explain their projects well in advance so that we can confirm that your UI / UX problem is not unrelated to payments.</p><br><br><br><h3>Sign for the hacknight below</h3><iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDNrjgIpA6UBW8xe7fN-cj0FXgtj0DMW3pW02AXP0l1dR1uQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'  
+  }
+%}
+
+
+{% 
+  set action = ''
+%}
+{% from theme("data/sessions.html") import workshops, types %}
+{% 
+  set session = {
+      'id'    : 'sessions'
+    , 'label' : 'Workshops'
+    , 'link'  : 'workshops#sessions'
+    , 'list'  : workshops.values()
+    , 'types' : types
+  }
+%}
