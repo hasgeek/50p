@@ -249,6 +249,13 @@ header {
 @media (min-height: 725px) { .js .venue-home .leaflet-map { height: 725px; } }
 @media (min-height: 800px) { .js .venue-home .leaflet-map { height: 800px; } }
 
+@media (min-height: 450px) {
+  .venue-photo-location {
+    max-height: 304px;
+    overflow: hidden;
+  }
+}
+
 .sponsor-m > li {
     float: left !important;
     width: 48.5% !important;
