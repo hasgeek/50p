@@ -7,7 +7,7 @@
         {% if event.video_url %}
           <a href="{{event.video_url}}" class="video-link click" target="_blank" data-target="{{event.video_url}}" data-label="Runup event video"><i class="fa fa-play-circle-o"></i><img src={{ event.banner}} class="banner"/></a>
         {% else %}
-          <img src="{{ event.banner}}" class="banner"/>
+          <a href="{{event.url}}" data-target="{{event.url}}" data-label="{{ event.title }}" class="banner-wrapper"><img src="{{ event.banner}}" class="banner"/></a>
         {% endif %}
         <div class="pad-half push-one-bottom">
           <p class="space-1q event-title">{{ event.title }}</p>

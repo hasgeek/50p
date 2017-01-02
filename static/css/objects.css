@@ -1376,17 +1376,22 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
     min-height: 340px;
   }
   .runup-event-box.featured {
-    width: 50%;
-    display: block;
-    margin: 1% auto 2%;
+    width: 47.3%;
+    margin: 1% 1.2% 2%;
   }
 }
 
 @media (min-width: 1200px) {
   .runup-event-box {
-    width: 30%;
+    width: 30.6%;
     margin: 1.2%;
   }
+}
+
+.banner-wrapper {
+  max-height: 480px;
+  overflow: hidden;
+  display: block;
 }
 
 .runup-event-box .banner {
