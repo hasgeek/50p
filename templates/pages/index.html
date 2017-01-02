@@ -34,11 +34,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav center-block">
-          <li><a class="logo-text brown hidden-xs smooth-scroll" href="#page" tabindex="0" role="button">50p</a></li>
           <li><a class="brown smooth-scroll" href="#announcements" tabindex="0" role="button">Announcements</a></li>
           <li><a class="brown smooth-scroll" href="#proposals" tabindex="0" role="button">Proposals</a></li>
           <li><a class="brown smooth-scroll" href="#runup-events" tabindex="0" role="button">Runup events</a></li>
           <li><a class="brown smooth-scroll" href="#tickets" tabindex="0" role="button">Tickets</a></li>
+          <li><a class="brown" href="/2017/hacknight" tabindex="0" role="link">Hacknight</a></li>
           <li><a class="brown" href="/2017/workshop" tabindex="0" role="link">Workshop</a></li>
           <li><a class="brown smooth-scroll" href="#venue" tabindex="0" role="button">Venue</a></li>
           <li><a class="brown smooth-scroll" href="#sponsors" tabindex="0" role="button">Sponsors</a></li>
@@ -59,7 +59,12 @@
       <h3 class="venue-text">{{ event.date|safe }}</h3>
       <button href="#tickets" class="button smooth-scroll buy-tickets-btn">Buy tickets</button>
     </div>
-  {% block banner %}{% endblock %}
+  {% block banner %}
+    <div class="alert alert-success alert-dismissible hacknight-alert container-fluid" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <p class="container text-center"><span>Register <a href="/2017/hacknight" class="orange">here</a> for 50p hacknight on 13&#8211;14 Jan 2017.</span></p>
+    </div>
+  {% endblock %}
   </header>
 {% endblock %}
 

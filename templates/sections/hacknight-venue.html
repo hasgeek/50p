@@ -1,0 +1,6 @@
+{% with %}
+  {% from theme("data/hacknight.html") import event %}
+  {% from theme("data/hacknight-venue.html") import venue %}
+  {% set venue_id = 'hacknight-venue' %}
+  {% include theme("layouts/venue.html") %}
+{% endwith %}
