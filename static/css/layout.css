@@ -178,3 +178,9 @@
 		width: 80%;
 	}
 }
+.navbar-header {
+  width: 100%;
+}
+.navbar-collapse {
+  max-height: 480px;
+}
