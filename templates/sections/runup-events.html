@@ -15,7 +15,7 @@
           {%if event.date %}<p class="space-1q-top nospace-bottom"><i class="fa fa-calendar"></i> {{ event.date }}</p>{% endif %}
           {%if event.time %}<p class="space-1q-top nospace-bottom"><i class="fa fa-clock-o"></i> {{ event.time }}</p>{% endif %}
           <p class="space-1q-top nospace-bottom"><i class="fa fa-map-marker"></i> {{ event.venue|safe }}</p>
-          {% if event.rsvp %}<a href="{{event.rsvp}}" class="button tiny space-half-top nospace-bottom" target="_blank">Interested</a>{% endif %}
+          {% if event.url %}<a href="{{event.url}}" class="button tiny space-half-top nospace-bottom" data-target="{{event.url}}" data-label="{{ event.title }}">Interested</a>{% endif %}
         </div>
       </div>
     {% endfor %}

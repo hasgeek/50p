@@ -2,11 +2,13 @@
 <section class="event-themes push-two space-one-top clearfix{% if background %} fill-{{ background }}{% endif %}" id="announcements">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 regular-prose semibold">
-       {{ event.about.leftside_blurb|safe }}
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 regular-prose semibold">
-       {{ event.about.rightside_blurb|safe }}
+      <div class="clearfix">
+        <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12 regular-prose semibold">
+         {{ event.about.leftside_blurb|safe }}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 regular-prose semibold">
+         {{ event.about.rightside_blurb|safe }}
+        </div>
       </div>
       <div class="col-xs-12 regular-prose semibold space-one">
        {{ event.about.center_blurb|safe }}
