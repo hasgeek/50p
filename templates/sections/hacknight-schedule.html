@@ -1,0 +1,27 @@
+{% from theme("data/hacknight-schedule.html") import schedule as schedule %}
+<section id="{{ schedule.id }}" class="schedule push-two clearfix{% if background %} fill-{{ background }}{% endif %}">
+  <h4 class="text-left space-two legible text-center"><i class="fa fa-calendar"></i> {{ schedule.date }}</h4>
+  <table class="container">
+    <thead style="border-bottom: 1px solid #ccc">
+      <tr>
+        <th class="time semi-bold text-center regular"><div>Time</div></th>
+        <th class="time semi-bold text-center regular"><div>Track</div></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in schedule.list %}
+      <tr style="border-bottom: 1px solid #ccc">
+        <td style="width:30%"><p class="regular text-center space-1q">{{ item.slot|replace(' ', '&nbsp;')|safe }}</p></td>
+        <td style="width:70%">
+          <p class="secondary text-center space-1q">{{ item.title|safe }}</p>
+          {% if item.speaker or item.designation %}
+            <p class="tiny text-center space-1q">{{ item.speaker|safe }}</p>
+            <p class="tiny text-center space-1q">{{ item.designation|safe }}</p>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
