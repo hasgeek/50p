@@ -685,19 +685,9 @@ li.event-node{
   }
 }
 @media (max-width: 767px){
-
-  .event-themes li{
-    width: 50%;  
-    float: left;
-  }
   .event-themes h3{
     font-size: 20px;
     font-weight: 300;
-  }
-  .event-highlights li{
-    width: 50%;
-    float: left;
-    padding-bottom: 50px;
   }
 }
 
@@ -1497,7 +1487,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
   padding: 5px;
   font-size: 10px;
   color: rgba(0,0,0,0.6);
-  background-color: #A1DADB;
+  background-color: #514F74;
   cursor: pointer;
   height: 65px;
   overflow: hidden;
