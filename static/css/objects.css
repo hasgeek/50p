@@ -1330,7 +1330,7 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 }
 
 .banner-wrapper {
-  max-height: 480px;
+  max-height: 189px;
   overflow: hidden;
   display: block;
 }
