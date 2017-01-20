@@ -1383,7 +1383,11 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 
 @media (min-width: 1200px) {
   .media-left {
-    width: 30%;
+    width: 200px;
+  }
+  .pos-top {
+    position: relative;
+    top: 7px;
   }
 }
 
@@ -1393,9 +1397,9 @@ body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
 }
 
 .offer-logo {
-  height: 45px;
-  vertical-align: top;
-  margin-left: 10px;
+  max-width: 150px;
+  vertical-align: center;
+  max-height: 50px;
 }
 
 .media-body .offer-heading {
