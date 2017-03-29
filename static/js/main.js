@@ -369,8 +369,7 @@ $(document).ready(function() {
   });
 
   // For proposals
-  var proposals_url = 'https://50p.talkfunnel.com/2017/json';
-
+  var proposals_url = 'https://rootconf.talkfunnel.com/devops-for-payments-2017/json/';
   //If funnel-proposals divs is present on the page, then make the ajax call.
   if(($('#funnel-proposals').length)) {
     $.ajax({
@@ -383,7 +382,7 @@ $(document).ready(function() {
     });//eof ajax call
   }
 
-  var funnelurl = 'https://50p.talkfunnel.com/2017/schedule/json';
+  var funnelurl = 'https://rootconf.talkfunnel.com/devops-for-payments-2017/schedule/json';
 
   //If schedule divs are present on the page, then make the ajax call.
   if(($('.schedule-table-container').length)) {
