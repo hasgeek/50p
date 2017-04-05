@@ -1,12 +1,13 @@
 {% extends theme('layouts/page.html') %}
 {%
   set page = {
-      'title'               : '50p'
+      'title'               : 'DevOps for digital payments'
     , 'description'         : ''
     , 'sections'            : [      
         ('event-themes',               ''),
-        ('schedule',               ''),
-        ('runup-events',               ''),
+        ('schedule',               '')
+        ('tickets',               '')
+        ('sponsors',               '')
         ('venue-summary',             ''),
         ('sponsors-summary',          'darkviolet')
     ]
@@ -26,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand brown semibold" href="/2017/">50p</a>
+          <a class="navbar-brand brown semibold" href="/devpay/">50p</a>
         </div>
 
 
@@ -36,13 +37,11 @@
           <li><a class="logo-text brown hidden-xs smooth-scroll" href="#page" tabindex="0" role="button">50p</a></li>
           <li><a class="brown smooth-scroll" href="#announcements" tabindex="0" role="button">Announcements</a></li>
           <li><a class="brown smooth-scroll" href="#schedule" tabindex="0" role="button">Schedule</a></li>
-          <li><a class="brown smooth-scroll" href="#runup-events" tabindex="0" role="button">Runup events</a></li>
-          <li><a class="brown smooth-scroll" href="#tickets" tabindex="0" role="button">Tickets</a></li>
-          <li><a class="brown" href="/2017/hacknight" tabindex="0" role="link">Hacknight</a></li>
-          <li><a class="brown" href="/2017/workshop" tabindex="0" role="link">Workshop</a></li>
+            <li><a class="brown smooth-scroll" href="#tickets" tabindex="0" role="button">Tickets</a></li>
           <li><a class="brown smooth-scroll" href="#venue" tabindex="0" role="button">Venue</a></li>
+        
           <li><a class="brown smooth-scroll" href="#sponsors" tabindex="0" role="button">Sponsors</a></li>
-          <li><a class="brown" href="https://blog.50p.in" tabindex="0" role="button" target="_blank">Blog</a></li>
+          <li><a class="brown" href="https://blog.50p.in" tabindex="0" role="button" target="_blank">Follow Blog</a></li>
           <li><a class="brown smooth-scroll" href="#about" tabindex="0" role="button">About HasGeek</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->   
@@ -60,4 +59,67 @@
       <h3 class="venue-text">{{ event.date|safe }}</h3>
     </div>
   </header>
+{% endblock %}
+{% block footerscripts %}
+<style type="text/css">    
+  #boxoffice-widget .boxoffice-button-action {    
+    background-color: #E05F26;    
+    border-color:  #B94C1D;   
+    color: #fff;    
+  }   
+  #boxoffice-widget .boxoffice-button-info {    
+    background-color: #5BC0DE;    
+    border-color: #2A9CBE;    
+    color: #fff;    
+  }   
+  #boxoffice-widget .payment-stages-bg {    
+    background-color: #5d6490;    
+  }   
+  #boxoffice-widget .progress-indicator>li {    
+    color: #fff;    
+  }   
+  #boxoffice-widget .category-heading {   
+    background-color: #e2be74;    
+    border-bottom: 3px solid #c9a866;   
+    color: rgba(0,0,0,0.6);  
+    line-height: 1.1;  
+  }   
+  #boxoffice-widget .category-heading:after {   
+    border-color: #e2be74 #fff #e2be74 #e2be74;
+  }
+</style>    
+    
+<script>    
+  $(function(){   
+    //Boxoffice widget    
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";  
+    $.get({   
+      url: boxofficeUrl+"/api/1/boxoffice.js",
+      crossDomain: true   
+    }).done(function(data) {    
+      var boxofficeScript = document.createElement('script');   
+      boxofficeScript.innerHTML = data.script;    
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
+      window.Boxoffice.init({   
+        org: 'hasgeek',   
+        itemCollection: '27ae1868-0d36-11e7-a819-87bfe7da7aa5', 
+        paymentDesc: 'Building reliable payment systems and services 2017'    
+      });   
+    }).fail(function(response) {    
+      var error_msg;
+      if (response.readyState === 4) {
+        error_msg = "Server error, please try again later";
+      }
+      else if (response.readyState === 0) {
+        if(!navigator.onLine) {
+          error_msg = "Unable to connect. There is no network!";
+        }
+        else {
+          error_msg = "<p>Unable to connect. If you are behind a firewall or using any script blocking extension (like Privacy Badger).<p></p> Please ensure your browser can load boxoffice.hasgeek.com, api.razorpay.com and checkout.razorpay.com</p>";
+        }
+      }
+      $('#boxoffice-widget p').html(error_msg);
+    });   
+  });   
+</script>
 {% endblock %}
