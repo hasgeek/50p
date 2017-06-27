@@ -49,10 +49,55 @@
         'id'    : 'hospitality-partners'
       , 'title' : 'Hospitality Partner'
       , 'size'  : 's'
+    }, {
+        'id'    : 'venue-partners'
+      , 'title' : 'Venue Partner'
+      , 'size'  : 's'
+    }, {
+        'id'    : 'payment-partners'
+      , 'title' : 'Payment Partner'
+      , 'size'  : 's'
     }
   ]
 %}
 {# Logo Orientation can be either 'landscape' or 'portrait' #}
 {%
-  set items = []
+  set items = [
+    {
+      'title'       : 'Vidyalankar School of Information Technology (VSIT)',
+      'id'          : 'vsit',
+      'logo'        : 'https://images.hasgeek.com/embed/file/964434d000044ddb8969d068cdaaaf1a',
+      'link'        : 'http://www.vsit.edu.in/',
+      'display'     : 'www.vsit.edu.in',
+      'type'        : 'venue-partners',
+      'blurb'       : '<p>Vidyalankar School of Information Technology (VSIT) is a part of Vidyalankar Dnyanpeeth Trust and is affiliated to the University of Mumbai. It was established in the year 2002. VSIT offers both graduate and post-graduate programmes in the subjects of Information Technology, Commerce and Management. The programmes offered are B.Sc. IT, M.Sc. IT, B.M.S., B.M.M, B.Com. with specialization in Accounting & Finance, Banking & Insurance , Financial Markets; M.Com in Advanced Accounting, Banking & Finance. It also offers management programmes at post- graduate level with specialization in Human Resource Development, Marketing Management and Financial Management. VSIT has tie-ups with renowned International Universities like Penn State University, Fresno State University, Sheffield Hallam University, Hult University, University of Aston, University of Toledo and University of South Carolina, Aiken, University of Rutgers, Camden, Royal Rhodes University, and University of Fresno Valley.</p>'
+    },
+    {
+      'title'       : 'Razorpay',
+      'id'          : 'razorpay',
+      'logo'        : 'https://images.hasgeek.com/embed/file/5cacd3f2c8ea4ed9a89dd532935ba07d',
+      'link'        : 'https://www.razorpay.com/',
+      'display'     : 'www.razorpay.com',
+      'type'        : 'payment-partners',
+      'blurb'       : '<p>Razorpay is a Y Combinator incubated payments platform that powers online businesses to accept digital payments. Razorpay helps businesses accept online payments via several modes like Credit Card, Debit Card, Net banking, UPI and multiple Wallets from their end customers. Razorpay is a developer friendly payment gateway that focuses on essentials such as 24x7 support, one line integration code and checkout experiences that are intuitive and customer friendly. Razorpay offers a simple and paperless onboarding process for businesses where developers can integrate APIs with their website within a few hours. More than 30,000 merchants currently leverage Razorpay’s seamless payment solution. The USP of Razorpay’s payment platform is its ‘Checkout’ feature, that allows customers to start and end the payment process on a single page without any re-directs, leading to better payment success rates and customer retention rates. Razorpay’s solution comes with a powerful dashboard that allows merchants to track key business metrics as well as get customized reports. The dashboard also enables merchants to easily handle customer refunds at a click of a button. Being an innovator in the payments domain, Razorpay has received many accolades in a short span of time. Last year Razorpay won the Nasscom \'League of 10\' Companies and it won the Financial Express ‘Software Product of the Year’, Runner-up and the bronze award for the ‘Best POS innovation by PYMNTS.com this year. Founders of Razorpay, Harshil Mathur and Shashank Kumar were recently selected for the prestigious ‘Forbes 30 Under 30’ 2017. Razorpay is also backed by marquee investors like Tiger Global, Matrix Partners and Mastercard</p>'
+    },
+    {
+      'title'       : 'E2E Networks',
+      'id'          : 'e2e-networks',
+      'logo'        : 'https://images.hasgeek.com/embed/file/8797b467fc0147c0951d6fcb21e7b31c',
+      'link'        : 'https://www.e2enetworks.com/',
+      'display'     : 'www.e2enetworks.com',
+      'type'        : 'community-partners',
+      'blurb'       : '<p>E2E Networks is the fastest growing Cloud Computing (IaaS) company in India, providing Value Priced, Pure SSD Virtual Private Servers and Dedicated Servers combined with vast India specific expertise in implementing and managing infrastructure for web, mobile or enterprise centric workloads.Founded in 2009 and EBITA positive since inception, today some of the biggest web and mobile properties in India run on E2E Networks infrastructure</p>'
+    },
+    {
+      'title'       : 'Aerospike',
+      'id'          : 'aerospike',
+      'logo'        : 'https://images.hasgeek.com/embed/file/49e5a5b32b084105adbfdb13ef77202f',
+      'link'        : 'http://www.aerospike.com/',
+      'display'     : 'aerospike.com',
+      'type'        : 'community-partners',
+      'blurb'       : '<p>Aerospike is the high-performance NoSQL database that delivers predictable performance, higher up time and availability and lower TCO. Aerospike is purpose-built for the real-time transactional workloads that support mission-critical applications as part of a Digital Transformation. These workloads have the mandate to deliver informed and immediate decisions for industries like financial services, ad tech, and e-commerce. Aerospike’s unique combination of speed, scale, and reliability delivers 10x performance at 1/10th the cost compared to other databases. For more information, visit us on Facebook, Twitter or aerospike.com</p>'
+    }
+  ]
 %}
