@@ -130,7 +130,7 @@ var addRowSpan = function(schedule) {
         }
       }
     }
-  });//eof slots loop 
+  });//eof slots loop
 }
 
 var checkColumns = function(schedule) {
@@ -190,7 +190,7 @@ function parseJson(data, eventType, divContainer) {
   var conferenceScheduleCounter = 0;
   var workshopScheduleCounter = 0;
   //Create rows at 5min intervals
-  schedules.forEach(function(eachSchedule, scheduleindex, schedules) {        
+  schedules.forEach(function(eachSchedule, scheduleindex, schedules) {
     var rooms = [];
     schedules[scheduleindex].date = getDateString(eachSchedule.date);
     schedules[scheduleindex].tableid = 'table-' + scheduleindex;
@@ -369,7 +369,7 @@ $(document).ready(function() {
   });
 
   // For proposals
-  var proposals_url = 'https://rootconf.talkfunnel.com/devops-for-payments-2017/json/';
+  var proposals_url = 'https://50p.talkfunnel.com/building-reliable-payment-systems-2017/json/';
   //If funnel-proposals divs is present on the page, then make the ajax call.
   if(($('#funnel-proposals').length)) {
     $.ajax({
@@ -382,7 +382,7 @@ $(document).ready(function() {
     });//eof ajax call
   }
 
-  var funnelurl = 'https://rootconf.talkfunnel.com/devops-for-payments-2017/schedule/json';
+  var funnelurl = 'https://50p.talkfunnel.com/building-reliable-payment-systems-2017/schedule/json';
 
   //If schedule divs are present on the page, then make the ajax call.
   if(($('.schedule-table-container').length)) {

@@ -1,9 +1,9 @@
 {% extends theme('layouts/page.html') %}
 {%
   set page = {
-      'title'               : 'DevOps for digital payments'
+      'title'               : 'Payments Community, Mumbai 2017'
     , 'description'         : ''
-    , 'sections'            : [      
+    , 'sections'            : [
         ('event-themes',               ''),
         ('schedule',               ''),
         ('tickets',               ''),
@@ -18,7 +18,7 @@
   <nav class="navbar" id="site-nav" role="navigation">
     <div>
      <!-- Brand and toggle get grouped for better mobile display -->
-    
+
         <div class="navbar-header visible-xs">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -38,12 +38,12 @@
           <li><a class="brown smooth-scroll" href="#schedule" tabindex="0" role="button">Schedule</a></li>
             <li><a class="brown smooth-scroll" href="#tickets" tabindex="0" role="button">Tickets</a></li>
           <li><a class="brown smooth-scroll" href="#venue" tabindex="0" role="button">Venue</a></li>
-        
+
           <li><a class="brown smooth-scroll" href="#sponsors" tabindex="0" role="button">Sponsors</a></li>
           <li><a class="brown" href="https://blog.50p.in" tabindex="0" role="button" target="_blank">Follow Blog</a></li>
           <li><a class="brown smooth-scroll" href="#about" tabindex="0" role="button">About HasGeek</a></li>
         </ul>
-      </div><!-- /.navbar-collapse -->   
+      </div><!-- /.navbar-collapse -->
      </div>
   </nav>
 </div>
@@ -60,51 +60,51 @@
   </header>
 {% endblock %}
 {% block footerscripts %}
-<style type="text/css">    
-  #boxoffice-widget .boxoffice-button-action {    
-    background-color: #E05F26;    
-    border-color:  #B94C1D;   
-    color: #fff;    
-  }   
-  #boxoffice-widget .boxoffice-button-info {    
-    background-color: #5BC0DE;    
-    border-color: #2A9CBE;    
-    color: #fff;    
-  }   
-  #boxoffice-widget .payment-stages-bg {    
-    background-color: #5d6490;    
-  }   
-  #boxoffice-widget .progress-indicator>li {    
-    color: #fff;    
-  }   
-  #boxoffice-widget .category-heading {   
-    background-color: #e2be74;    
-    border-bottom: 3px solid #c9a866;   
-    color: rgba(0,0,0,0.6);  
-    line-height: 1.1;  
-  }   
-  #boxoffice-widget .category-heading:after {   
+<style type="text/css">
+  #boxoffice-widget .boxoffice-button-action {
+    background-color: #E05F26;
+    border-color:  #B94C1D;
+    color: #fff;
+  }
+  #boxoffice-widget .boxoffice-button-info {
+    background-color: #5BC0DE;
+    border-color: #2A9CBE;
+    color: #fff;
+  }
+  #boxoffice-widget .payment-stages-bg {
+    background-color: #5d6490;
+  }
+  #boxoffice-widget .progress-indicator>li {
+    color: #fff;
+  }
+  #boxoffice-widget .category-heading {
+    background-color: #e2be74;
+    border-bottom: 3px solid #c9a866;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.1;
+  }
+  #boxoffice-widget .category-heading:after {
     border-color: #e2be74 #fff #e2be74 #e2be74;
   }
-</style>    
-    
-<script>    
-  $(function(){   
-    //Boxoffice widget    
-    var boxofficeUrl = "https://boxoffice.hasgeek.com";  
-    $.get({   
+</style>
+
+<script>
+  $(function(){
+    //Boxoffice widget
+    var boxofficeUrl = "https://boxoffice.hasgeek.com";
+    $.get({
       url: boxofficeUrl+"/api/1/boxoffice.js",
-      crossDomain: true   
-    }).done(function(data) {    
-      var boxofficeScript = document.createElement('script');   
-      boxofficeScript.innerHTML = data.script;    
-      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);    
-      window.Boxoffice.init({   
-        org: 'hasgeek',   
-        itemCollection: '27ae1868-0d36-11e7-a819-87bfe7da7aa5', 
-        paymentDesc: 'Building reliable payment systems and services 2017'    
-      });   
-    }).fail(function(response) {    
+      crossDomain: true
+    }).done(function(data) {
+      var boxofficeScript = document.createElement('script');
+      boxofficeScript.innerHTML = data.script;
+      document.getElementsByTagName('body')[0].appendChild(boxofficeScript);
+      window.Boxoffice.init({
+        org: 'hasgeek',
+        itemCollection: '27ae1868-0d36-11e7-a819-87bfe7da7aa5',
+        paymentDesc: 'Building reliable payment systems and services 2017'
+      });
+    }).fail(function(response) {
       var error_msg;
       if (response.readyState === 4) {
         error_msg = "Server error, please try again later";
@@ -118,7 +118,7 @@
         }
       }
       $('#boxoffice-widget p').html(error_msg);
-    });   
-  });   
+    });
+  });
 </script>
 {% endblock %}
